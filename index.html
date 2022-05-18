@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Beekeeper</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,9 +14,30 @@
 
   </head>
   <body>
+    <main class="container-fluid">
 
+      <!-- For buttons -->
+      <div class="text-center row">
+        <button onclick = drawBees() class="m-4 btn btn-dark">Bees!</button>
+        <button onclick = drawBeesRandomly() class="m-4 btn btn-dark">RANDOM Bees!</button>
+        <div class="col">
+          <button onclick = "filter('busy')" class="m-4 btn btn-dark">Filter Busy</button>
+          <button onclick = "filter('aptitude')" class="m-4 btn btn-dark">Aptitude</button>
+          <button onclick = "filter('color')" class="m-4 btn btn-dark">Color</button>
+          <button onclick = "filter('favoriteFood')" class="m-4 btn btn-dark">Favorite Food</button>
+          <button onclick = "filter('name')" class="m-4 btn btn-dark">Name</button>
+        </div>
+      </div>
 
-    <div class="mdi mdi-bee"></div>
+      <!-- For bees -->
+      <div id="bee-field" class="row d-flex">
+        
+        
+      </div>
+    
+    </main>
+
+    
       
         <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

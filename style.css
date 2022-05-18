@@ -1,3 +1,28 @@
-div{
-    color: teal;
+body{
+    /* background-image: url(./img/bgField.jpg); */
+    background-position: center;
+    background-size: 400%;
+    background-color: black;
+}
+
+#bee-field{
+    
+}
+
+
+
+.color-teal{
+    color:teal
+}
+
+.color-blueviolet{
+    color:blueviolet
+}
+
+.color-goldenrod{
+    color:goldenrod
+}
+
+.color-grey{
+    color:grey
 }

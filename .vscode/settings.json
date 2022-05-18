@@ -18,5 +18,9 @@
         "titleBar.inactiveBackground": "#ffff9699",
         "titleBar.inactiveForeground": "#15202b99"
     },
-    "peacock.color": "#ffff96"
+    "peacock.color": "#ffff96",
+    "cSpell.ignoreWords": [
+        "RanBees",
+        "Rembees"
+    ]
 }
