@@ -162,35 +162,58 @@ function drawBees() {
     document.getElementById('bee-field').innerHTML = htmlChunk
 }
 
+// function drawBeesRandomly() {
+//     let RemBees = []
+//     currentBees.forEach(b => {
+//         RemBees.push(b)
+//     });
+//     let RanBees = []
+//     for (i = 0; i < currentBees.length; ){
+//         // start with a random spot in the array (this might make the check for undefinedness redundant)
+//         // NOTE could remove the "indefinite runtime + technically no guarantee it finishes" issues by rewriting array without undefined elements each time. ??on average less performant than letting it loop without iterating on failure cases??
+//         let randomRemIndexNo = Math.floor(Math.random() * currentBees.length)
+//             if (RemBees[randomRemIndexNo] != undefined) {
+//                 // if NOT undefined, put it in my array that is building
+//             RanBees.push(RemBees[randomRemIndexNo])
+//                 // AND if NOT undefined, take it out of my old array so i cant pick it next time
+//             RemBees.splice(randomRemIndexNo, 1, undefined)
+//             // only iterate if we got a success! otherwise we wont get all array items unless INSANELY lucky
+//             i++
+//         }
+//         else{
+//             // dont do anything if we did not get a success, go back to the loop without iterating. I do not need this else section. 
+//         }
+//     }
+//     let htmlChunk = ''
+//     RanBees.forEach(r => {
+//         htmlChunk += `<div class="h5 col-3 p-5 color-${r.color} mdi mdi-bee">${r.name}</div>`
+//     })
+//     document.getElementById('bee-field').innerHTML = htmlChunk
+// }
+
+
+// time to use my newfound splice and slice powers
 function drawBeesRandomly() {
     let RemBees = []
     currentBees.forEach(b => {
         RemBees.push(b)
     });
     let RanBees = []
-    for (i = 0; i < currentBees.length; ){
+    for (i = 0; i < currentBees.length;) {
         // start with a random spot in the array (this might make the check for undefinedness redundant)
         // NOTE could remove the "indefinite runtime + technically no guarantee it finishes" issues by rewriting array without undefined elements each time. ??on average less performant than letting it loop without iterating on failure cases??
-        let randomRemIndexNo = Math.floor(Math.random() * currentBees.length)
-            if (RemBees[randomRemIndexNo] != undefined) {
-                // if NOT undefined, put it in my array that is building
-            RanBees.push(RemBees[randomRemIndexNo])
-                // AND if NOT undefined, take it out of my old array so i cant pick it next time
-            RemBees.splice(randomRemIndexNo, 1, undefined)
-            // only iterate if we got a success! otherwise we wont get all array items unless INSANELY lucky
-            i++
-        }
-        else{
-            // dont do anything if we did not get a success, go back to the loop without iterating. I do not need this else section. 
-        }
+        let randomRemIndexNo = Math.floor(Math.random() * RemBees.length)
+        RanBees.push(RemBees[randomRemIndexNo])
+        RemBees.splice(randomRemIndexNo, 1)
+        i++
     }
     let htmlChunk = ''
     RanBees.forEach(r => {
         htmlChunk += `<div class="h5 col-3 p-5 color-${r.color} mdi mdi-bee">${r.name}</div>`
     })
     document.getElementById('bee-field').innerHTML = htmlChunk
-
 }
+
 
 function loseRandomBee(){
     let randIndex = Math.floor(Math.random()*bees.length)
